@@ -1,0 +1,29 @@
+<?php
+/**
+ * Build calculator form.
+ */
+function calculator_page_form($form, $form_state) {
+    $form = array();
+    $form['number1'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Number 1'),
+        '#size' => 20,
+    );
+    $form['number2'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Number 2'),
+        '#size' => 20,
+    );
+
+    $form['operator'] = array(
+        '#type' => 'select',
+        '#title' => t('Operator'),
+        '#options' => array('+', '-'),
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => t('Calculate'),
+    );
+    return $form;
+}
